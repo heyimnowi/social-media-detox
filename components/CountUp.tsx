@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 
 interface CountUpProps {
 	initialDate: number;
@@ -53,10 +53,19 @@ const CountUp: React.FC<CountUpProps> = ({ initialDate }) => {
   }
 
   return (
-    <Text>
+    <Text style={styles.text}>
       {timeElapsed.days}d {timeElapsed.hours}h {timeElapsed.minutes}m {timeElapsed.seconds}s
     </Text>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 30,
+    color: "#fff",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+});
 
 export default CountUp;
